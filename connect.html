@@ -38,36 +38,38 @@
   
         <!-- Sidebar Header -->
         <div class="flex flex-col items-center justify-center mb-6">
-          <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="w-auto h-auto">
+          <a href="alumnidashboard.html">
+            <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="w-auto h-auto">
+          </a>
         </div>
 
         <!-- Navigation -->
         <nav class="space-y-4">
-          <a href="alumnidashboard.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium">
-            <span class="material-icons">dashboard</span>
-            <span>Dashboard</span>
+          <a href="alumnidashboard.html" class="flex items-center space-x-2  text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+            <span class="material-icons">rss_feed</span>
+            <span>News Feed</span>
+          </a> 
+          <a href="profile.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+            <span class="material-icons">account_circle</span>
+            <span>Profile</span>
           </a>
-          <a href="update-details.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium">
-            <span class="material-icons">edit</span>
-            <span>Update Info</span>
-          </a>
-          <a href="connect.html" class="flex items-center space-x-2 text-blue-600 font-semibold">
+          <a href="connect.html" class="flex items-center space-x-2 text-blue-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">people</span>
             <span>Connect with Alumni</span>
           </a>
-          <a href="career.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium">
+          <a href="career.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">work</span>
             <span>Career Resources</span>
           </a>
-          <a href="events.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium">
+          <a href="events.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">event</span>
             <span>Events & Workshops</span>
           </a>
-          <a href="organizations.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium">
+          <a href="organizations.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">group_work</span>
-            <span>Join Groups</span>
+            <span>Join Organizations</span>
           </a>
-          <a href="index.html" class="flex items-center space-x-2 text-gray-700 hover:text-red-600 font-medium">
+          <a href="index.html" class="flex items-center space-x-2 text-gray-700 hover:text-red-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">logout</span>
             <span>Log Out</span>
           </a>
@@ -175,29 +177,57 @@
       
         <!-- Profile Dropdown -->
         <div class="relative" x-data="{ open: false }">
-          <div class="flex items-center space-x-2 cursor-pointer" @click="open = !open">
-            <span class="text-sm text-gray-600 hidden sm:block">Andres Malvar</span>
-            <img src="assets/alumni.png" alt="Profile" class="w-10 h-10 rounded-full border">
+          <!-- Trigger -->
+          <div class="flex items-center space-x-3 cursor-pointer" @click="open = !open">
+            <span class="text-sm text-gray-700 font-medium hidden sm:block">Andres Malvar</span>
+            <img src="assets/alumni.png" alt="Profile" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow-sm">
           </div>
-          <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-36 bg-white border rounded shadow-lg z-50">
-            <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white transition">Log Out</a>
+
+          <!-- Dropdown Menu -->
+          <div 
+            x-show="open" 
+            @click.away="open = false" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 translate-y-1"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-1"
+            class="absolute right-0 mt-3 w-44 bg-white border border-gray-200 rounded-xl shadow-lg z-50 overflow-hidden"
+          >
+            <!-- Change Password -->
+            <a 
+              href="changepassword.html" 
+              class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+            >
+              <span class="material-icons text-base mr-2">lock_reset</span>
+              Change Password
+            </a>
+
+            <!-- Log Out -->
+            <a 
+              href="index.html" 
+              class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition"
+            >
+              <span class="material-icons text-base mr-2">logout</span>
+              Log Out
+            </a>
           </div>
         </div>
       </header>
 
     <!-- Main Content -->
-    <main class="flex-1 p-6">
+<main class="flex-1 p-6 bg-gradient-to-tr from-blue-200 via-white to-blue-400">
 
-      <!-- Search Bar -->
-      <!-- Search and Filter -->
-<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mb-6">
+ <!-- Search and Filter -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6 mb-6 sm:justify-start justify-center">
   <!-- Search Input -->
-  <div class="relative w-full max-w-xs">
+  <div class="relative w-full max-w-xs mb-4 sm:mb-0">
     <input
       type="text"
       placeholder="Search alumni..."
       id="searchInput"
-      class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-xl focus:ring-opacity-80"
     />
     <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -209,160 +239,223 @@
   </div>
 
   <!-- Program Filter -->
-  <div class="w-full max-w-xs mt-4 sm:mt-0">
-    <select
-      id="programFilter"
-      class="w-full py-2 px-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-    >
-      <option value="">All Programs</option>
-      <option value="BSIT">BSIT Graduates</option>
-      <option value="BSCS">BSBA Graduates</option>
-      <option value="BSIS">BSED Graduates</option>
-      <!-- Add more programs here if needed -->
-    </select>
+  <div class="w-full max-w-xs mb-4 sm:mb-0">
+    <div class="relative">
+      <select
+        id="programFilter"
+        class="w-full py-3 px-4 border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-xl bg-white appearance-none pr-10"
+      >
+        <option value="">All Programs</option>
+        <option value="BSIT">BSIT Graduates</option>
+        <option value="BSIT">ACT Graduates</option>
+        <option value="BSBA">BSBA Graduates</option>
+        <option value="BSED">BSED Graduates</option>
+      </select>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Year Filter -->
+  <div class="w-full max-w-xs">
+    <div class="relative">
+      <select
+        id="yearFilter"
+        class="w-full py-3 px-4 border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:shadow-xl bg-white appearance-none pr-10"
+      >
+        <option value="">All Years</option>
+        <!-- Options will be generated automatically via JS -->
+      </select>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
   </div>
 </div>
 
-      <!-- Alumni Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="alumniList">
-        <!-- Alumni Card Template -->
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://event-images.tixel.com/cdn-cgi/image/w=700,q=70/media/images/68cd7b9148a666434411836ff17feb04_1720064045_6618_square_l.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Hev Abi</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 2022</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Software Engineer at Accenture</p>
-          <a href="alumni.html">
-            <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">
-              Connect
-            </button>
-          </a>
-        </div>
-        
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.discogs.com/d53LCviYRMu5XSH2ZoJ55TzViKSEkV33kzoFoEXuqvQ/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTc1NjYy/ODAtMTY1MDAxNDUy/My01Mjk3LmpwZWc.jpeg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Flow G</h2>
-          <p class="text-sm text-gray-600">BSCS | Graduated 2021</p>
-          <p class="text-sm mb-2 text-yellow-600 font-medium">Freelancer | Looking for Opportunities</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+  <!-- Alumni Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="alumniList">
+    <!-- Your alumni cards here (no change) -->
+    <!-- (Paste all your alumni cards content from your provided code here.) -->
+    
+    <!-- Example (only one shown here for brevity) -->
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://event-images.tixel.com/cdn-cgi/image/w=700,q=70/media/images/68cd7b9148a666434411836ff17feb04_1720064045_6618_square_l.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Hev Abi</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 2022</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Software Engineer at Accenture</p>
+      <a href="alumni.html">
+        <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">
+          Connect
+        </button>
+      </a>
+    </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.discogs.com/d53LCviYRMu5XSH2ZoJ55TzViKSEkV33kzoFoEXuqvQ/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTc1NjYy/ODAtMTY1MDAxNDUy/My01Mjk3LmpwZWc.jpeg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Flow G</h2>
+      <p class="text-sm text-gray-600">BSCS | Graduated 2021</p>
+      <p class="text-sm mb-2 text-yellow-600 font-medium">Freelancer | Looking for Opportunities</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://img.merchbar.com/brand/square/al-james.jpg?q=40&ar=1:1&gravity=smart&w=1400" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">AL James</h2>
-          <p class="text-sm text-gray-600">BSIS | Graduated 2020</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Data Analyst at GCash</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/skusta-clee-yM6xJ" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Skusta Clee</h2>
-          <p class="text-sm text-gray-600">BSBA | Graduated 2018</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Business Analyst</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://img.merchbar.com/brand/square/al-james.jpg?q=40&ar=1:1&gravity=smart&w=1400" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">AL James</h2>
+      <p class="text-sm text-gray-600">BSIS | Graduated 2020</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Data Analyst at GCash</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/skusta-clee-yM6xJ" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Skusta Clee</h2>
+      <p class="text-sm text-gray-600">BSBA | Graduated 2018</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Business Analyst</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/736x/4d/13/13/4d13135ef1d77ed91ce80334ceab6ef5.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Malupiton</h2>
-          <p class="text-sm text-gray-600">BSBA | Graduated 2015</p>
-          <p class="text-sm mb-2 text-yellow-600 font-medium">Entrepreneur</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/736x/4d/13/13/4d13135ef1d77ed91ce80334ceab6ef5.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Malupiton</h2>
+      <p class="text-sm text-gray-600">BSBA | Graduated 2015</p>
+      <p class="text-sm mb-2 text-yellow-600 font-medium">Entrepreneur</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://yt3.googleusercontent.com/VtX2InlWa1TompeA2DYmv2RMzQo0lGQiGOUMWXDBBbvQ7IK4z-hv5MYQfmZhZv5Lspxz29RChJ4=s900-c-k-c0x00ffffff-no-rj" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Diwata</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 1890</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Data Analyst at Diwata Pares</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/236x/dc/78/6b/dc786bd32d902078e2c94016b5fb8cdc.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Oscar</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 2023</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Data Analyst</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://yt3.googleusercontent.com/VtX2InlWa1TompeA2DYmv2RMzQo0lGQiGOUMWXDBBbvQ7IK4z-hv5MYQfmZhZv5Lspxz29RChJ4=s900-c-k-c0x00ffffff-no-rj" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Diwata</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 1890</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Data Analyst at Diwata Pares</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/236x/dc/78/6b/dc786bd32d902078e2c94016b5fb8cdc.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Oscar</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 2023</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Data Analyst</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/564x/ed/08/85/ed088584a7c80114cf8ee63d382114c7.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Koya Well</h2>
-          <p class="text-sm text-gray-600">BSBA | Graduated 2018</p>
-          <p class="text-sm mb-2 text-yellow-600 font-medium">Entrepreneur</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/564x/ed/08/85/ed088584a7c80114cf8ee63d382114c7.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Koya Well</h2>
+      <p class="text-sm text-gray-600">BSBA | Graduated 2018</p>
+      <p class="text-sm mb-2 text-yellow-600 font-medium">Entrepreneur</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/474x/5f/54/9a/5f549a4733f59889153a65dafdc73c3e.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Mimi YuuuH</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 2005</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Game Developer</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9H4u7_IxD4w-GoIbHTtAxmnt6WPDui0RO3Q&s" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Pano Mo Nasabi</h2>
-          <p class="text-sm text-gray-600">BSBA | Graduated 2020</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Analyst</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/474x/5f/54/9a/5f549a4733f59889153a65dafdc73c3e.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Mimi YuuuH</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 2005</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Game Developer</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9H4u7_IxD4w-GoIbHTtAxmnt6WPDui0RO3Q&s" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Pano Mo Nasabi</h2>
+      <p class="text-sm text-gray-600">BSBA | Graduated 2020</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Analyst</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS35mMHbWMHS3cm7ECxkM8xYdFZe9KN2R7hbFdr4ic_j8QdtU2vcfiv0L5sitrxXFonGvs&usqp=CAU" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Kap</h2>
-          <p class="text-sm text-gray-600">BSBA | Graduated 2011</p>
-          <p class="text-sm mb-2 text-yellow-600 font-medium">Brgy. Captain</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS35mMHbWMHS3cm7ECxkM8xYdFZe9KN2R7hbFdr4ic_j8QdtU2vcfiv0L5sitrxXFonGvs&usqp=CAU" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Kap</h2>
+      <p class="text-sm text-gray-600">BSBA | Graduated 2011</p>
+      <p class="text-sm mb-2 text-yellow-600 font-medium">Brgy. Captain</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/originals/d3/73/d0/d373d076a5031c0872fc6735c3400f67.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Sasa Gurl</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 2012</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Content Creator</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/236x/2a/4f/4f/2a4f4f32bce7bed3917e24068869baea.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">SunFlower Girl</h2>
-          <p class="text-sm text-gray-600">BSBA | Graduated 2024</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Business Woman</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/originals/d3/73/d0/d373d076a5031c0872fc6735c3400f67.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Sasa Gurl</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 2012</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Content Creator</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/236x/2a/4f/4f/2a4f4f32bce7bed3917e24068869baea.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">SunFlower Girl</h2>
+      <p class="text-sm text-gray-600">BSBA | Graduated 2024</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Business Woman</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.imgflip.com/kdezj.jpg?a484368" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Inday</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 2018</p>
-          <p class="text-sm mb-2 text-yellow-600 font-medium">Entrepreneur</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.imgflip.com/kdezj.jpg?a484368" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Inday</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 2018</p>
+      <p class="text-sm mb-2 text-yellow-600 font-medium">Entrepreneur</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
 
-        <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
-          <img src="https://i.pinimg.com/736x/db/23/b0/db23b04662819bd33a88f23d4c4e16fd.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
-          <h2 class="text-lg font-semibold text-gray-800">Angkol</h2>
-          <p class="text-sm text-gray-600">BSIT | Graduated 1890</p>
-          <p class="text-sm mb-2 text-green-600 font-medium">Owner of Computer Shop</p>
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
-        </div>
-        
-      </div>
-    </main>
+    <div class="alumni-card bg-white p-5 rounded-xl shadow text-center">
+      <img src="https://i.pinimg.com/736x/db/23/b0/db23b04662819bd33a88f23d4c4e16fd.jpg" class="mx-auto w-20 h-20 rounded-full mb-4 border-2 border-blue-500">
+      <h2 class="text-lg font-semibold text-gray-800">Angkol</h2>
+      <p class="text-sm text-gray-600">BSIT | Graduated 1890</p>
+      <p class="text-sm mb-2 text-green-600 font-medium">Owner of Computer Shop</p>
+      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl hover:bg-blue-600 hover:scale-105 transition-all duration-200">Connect</button>
+    </div>
+    
+  </div>
 
-  <!-- JavaScript for Filtering -->
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const alumniCards = document.querySelectorAll('.alumni-card');
+    <!-- (Rest of your alumni cards...) -->
 
-    searchInput.addEventListener('keyup', function () {
-      const query = this.value.toLowerCase();
-      alumniCards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
-      });
+  </div>
+</main>
+
+
+<!-- JavaScript for Search and Filters -->
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const programFilter = document.getElementById('programFilter');
+  const yearFilter = document.getElementById('yearFilter');
+  const alumniCards = document.querySelectorAll('.alumni-card');
+
+  // Dynamically generate Year options from 2004 to 2025
+  const currentYear = new Date().getFullYear();
+  for (let year = 2004; year <= currentYear; year++) {
+    const option = document.createElement('option');
+    option.value = year;
+    option.textContent = year;
+    yearFilter.appendChild(option);
+  }
+
+  // Function to filter alumni
+  function filterAlumni() {
+    const query = searchInput.value.toLowerCase();
+    const selectedProgram = programFilter.value;
+    const selectedYear = yearFilter.value;
+
+    alumniCards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const programMatch = selectedProgram ? text.includes(selectedProgram.toLowerCase()) : true;
+      const yearMatch = selectedYear ? text.includes(selectedYear) : true;
+      const searchMatch = text.includes(query);
+
+      if (programMatch && yearMatch && searchMatch) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
-  </script>
+  }
 
+  // Add event listeners
+  searchInput.addEventListener('keyup', filterAlumni);
+  programFilter.addEventListener('change', filterAlumni);
+  yearFilter.addEventListener('change', filterAlumni);
+</script>
 </body>
 </html>
