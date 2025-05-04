@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Organizations | TLCATT</title>
+    <title>Events & Workshops | TLCATT</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/TLCATT-LOGO.png" />
@@ -32,7 +32,7 @@
     <aside 
     :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" 
     class="fixed top-0 left-0 z-50 w-64 bg-white shadow-md p-4 transform transition-transform duration-300 ease-in-out h-screen 
-            md:top-0 md:translate-x-0 md:transform-none md:sticky"
+           md:top-0 md:translate-x-0 md:transform-none md:sticky"
   >
         <!-- Sidebar Header -->
         <div class="flex flex-col items-center justify-center mb-6">
@@ -59,11 +59,11 @@
             <span class="material-icons">work</span>
             <span>Career Resources</span>
           </a>
-          <a href="events.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+          <a href="events.html" class="flex items-center space-x-2 text-blue-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">event</span>
             <span>Events & Workshops</span>
           </a>
-          <a href="organizations.html" class="flex items-center space-x-2 text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+          <a href="organizations.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
             <span class="material-icons">group_work</span>
             <span>Join Organizations</span>
           </a>
@@ -111,7 +111,7 @@
         </div>
       
         <!-- Title (Centered) -->
-        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Join Organizations</h1>
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Events & Workshops</h1>
 
         <div class="flex items-center space-x-4">  
           <!-- Notifications -->
@@ -214,96 +214,99 @@
         </div>
       </header>
 
- <!-- Main Content -->
-<main class="flex-1 p-6 bg-gradient-to-tr from-blue-200 via-white to-blue-400">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gradient-to-tr from-blue-200 via-white to-blue-400 min-h-screen">
 
-    <!-- TLC Tech Enthusiasts -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://images.squarespace-cdn.com/content/v1/5316a542e4b0ab76f8fe62c2/cb69fc6c-4a5e-4b79-a9eb-0d2eeb1d13dc/volunteers.jpg" alt="Tech Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">TLC Tech Enthusiasts</h2>
-        <p class="text-sm text-gray-600 mb-4">For alumni passionate about IT, software dev, and tech trends.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <a href="see-group.html" class="mt-2 flex flex-col gap-2">
-          <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">
-            See Group Details
-          </button>
-        </a>
-      </div>
-    </div>
+        <div class="flex justify-end mb-6">
+          <a href="post-event.html"
+          class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">
+           + Post Event
+          </a>
+        </div>
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+          <!-- Template for Event Cards -->
+          <div class="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <img src="https://www.univariety.com/blog/wp-content/uploads/2022/02/5853-min-scaled.jpg" alt="Tech Alumni Meetup"
+              class="w-full h-48 object-cover rounded-t-2xl" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-1">Tech Alumni Meetup 2025</h2>
+              <p class="text-sm text-gray-600 mb-2">📍 TLC Auditorium | 🗓️ April 25, 2025 | ⌚ 1:00 PM</p>
+              <p class="text-sm text-gray-700 mb-4">Reconnect with fellow tech alumni, explore new innovations, and network with industry leaders.</p>
+              <button
+                class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">
+                Register Now
+              </button>
+            </div>
+          </div>
+      
+          <!-- Resume Workshop -->
+          <div class="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <img src="https://acorn.works/wp-content/uploads/2022/07/consultant-running-a-small-workshop-with-a-team-of-employees-scaled.jpg" alt="Resume Workshop"
+              class="w-full h-48 object-cover rounded-t-2xl" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-1">Resume Building Workshop</h2>
+              <p class="text-sm text-gray-600 mb-2">📍 Online (Zoom) | 🗓️ May 10, 2025 | ⌚ 3:00 PM</p>
+              <p class="text-sm text-gray-700 mb-4">Create a standout resume and cover letter—perfect for job seekers and new grads.</p>
+              <button
+                class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">
+                Register Now
+              </button>
 
-    <!-- TLC Business Circle -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://www.shutterstock.com/image-photo/silhouette-business-people-posing-by-600nw-178721822.jpg" alt="Business Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">TLC Business Circle</h2>
-        <p class="text-sm text-gray-600 mb-4">Network with alumni in marketing, entrepreneurship, and business strategy.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
+            </div>
+          </div>
+      
+          <!-- Career Talk -->
+          <div class="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <img src="https://isbatuniversity.ac.ug/wp-content/uploads/2021/10/career.jpg" alt="Career Talk"
+              class="w-full h-48 object-cover rounded-t-2xl" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-1">Career Talk: Breaking into Tech</h2>
+              <p class="text-sm text-gray-600 mb-2">📍 TLC Lecture Hall | 🗓️ May 18, 2025 | ⌚ 8:30 AM</p>
+              <p class="text-sm text-gray-700 mb-4">Hear stories from alumni working at Google, Canva, Microsoft and get insider tips!</p>
+              <button
+              class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">
+              Register Now
+              </button>
+            </div>
+          </div>
+      
+          <!-- Seminar -->
+          <div class="bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <img src="https://cdn.prod.website-files.com/64ad227a3e66387fc5d89320/65cc5760a73d6666440d87e3_seminars-training-header.jpg" alt="Financial Literacy"
+              class="w-full h-48 object-cover rounded-t-2xl" />
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-1">Financial Literacy Seminar</h2>
+              <p class="text-sm text-gray-600 mb-2">📍 TLC Seminar Room | 🗓️ June 5, 2025 | ⌚ 9:00 AM</p>
+              <p class="text-sm text-gray-700 mb-4">Master your finances after college—learn budgeting, saving, investing, and credit-building.</p>
+              <button
+              class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">
+              Register Now
+              </button>
+            </div>
+          </div>
+      
+        </div>
+      </main>
+      <footer class="bg-white mt-8 p-6 shadow-inner">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-6 text-sm text-gray-700">
+        
+          <!-- Logo & Name -->
+          <div class="flex items-center space-x-3">
+            <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="h-10 w-auto">
+            <div class="text-center md:text-left">
+              <p class="font-semibold text-base text-gray-800">The Lewis College</p>
+              <p class="text-sm text-gray-600">Alumni Tracer Tool</p>
+            </div>
+          </div>
+        
+          <!-- Footer Text -->
+          <p class="text-center md:text-right">&copy; 2025 TLC Alumni Tracer Tool. All rights reserved.</p>
+        </div>
+      </footer>
+      
     </div>
-
-    <!-- Alumni Volunteers -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://altlig.com/wp-content/uploads/2018/10/volunteer.png" alt="Volunteers Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">Alumni Volunteers</h2>
-        <p class="text-sm text-gray-600 mb-4">Get involved in charity work, community service, and mentoring students.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
-    </div>
-
-    <!-- TLC Creative Collective -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://images.squarespace-cdn.com/content/v1/64d19b3030ee2839c2837203/caed68ef-70ca-4697-a170-ef56fd7b3617/TCC-Logo-02.png" alt="Creative Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">TLC Creative Collective</h2>
-        <p class="text-sm text-gray-600 mb-4">Join alumni in design, media, and creative fields to collaborate and grow.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
-    </div>
-
-    <!-- Sports & Wellness Club -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://media.licdn.com/dms/image/v2/D5612AQFYIuqtF0lKIQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1695967301062?e=2147483647&v=beta&t=lvUg9VqFwLS4GmpRaRIjP9JX6dJzGLFKxp19GpxsqPc" alt="Sports Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">Sports & Wellness Club</h2>
-        <p class="text-sm text-gray-600 mb-4">Stay active, join alumni tournaments, and focus on well-being together.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
-    </div>
-
-  </div>
-</main>
-<footer class="bg-white mt-8 p-6 shadow-inner">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-6 text-sm text-gray-700">
-  
-    <!-- Logo & Name -->
-    <div class="flex items-center space-x-3">
-      <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="h-10 w-auto">
-      <div class="text-center md:text-left">
-        <p class="font-semibold text-base text-gray-800">The Lewis College</p>
-        <p class="text-sm text-gray-600">Alumni Tracer Tool</p>
-      </div>
-    </div>
-  
-    <!-- Footer Text -->
-    <p class="text-center md:text-right">&copy; 2025 TLC Alumni Tracer Tool. All rights reserved.</p>
-  </div>
-</footer>
-</body>
+    
+  </body>
 </html>

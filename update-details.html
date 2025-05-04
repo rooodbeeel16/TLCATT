@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Update Information | TLCATT</title>
+<<<<<<< HEAD
     <link rel="icon" type="image/png" href="assets/TLCATT-LOGO.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+=======
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/TLCATT-LOGO.png" />
+
+    <!-- Tailwind & Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Fonts -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
@@ -19,17 +31,32 @@
 
   <body class="bg-gray-100 min-h-screen flex flex-col md:flex-row overflow-x-hidden">
   
+<<<<<<< HEAD
     <div x-show="sidebarOpen" class="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden" @click="sidebarOpen = false"></div>
   
+=======
+    <!-- Mobile Sidebar Overlay -->
+    <div x-show="sidebarOpen" class="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden" @click="sidebarOpen = false"></div>
+  
+    <!-- Sidebar -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
     <aside 
     :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" 
     class="fixed top-0 left-0 z-50 w-64 bg-white shadow-md p-4 transform transition-transform duration-300 ease-in-out h-screen 
             md:top-0 md:translate-x-0 md:transform-none md:sticky"
   >
+<<<<<<< HEAD
+=======
+        <!-- Sidebar Header -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div class="flex flex-col items-center justify-center mb-6">
           <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="w-auto h-auto">
         </div>
 
+<<<<<<< HEAD
+=======
+        <!-- Navigation -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <nav class="space-y-4">
           <a href="alumnidashboard.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium">
             <span class="material-icons">dashboard</span>
@@ -83,10 +110,21 @@
 
   
 
+<<<<<<< HEAD
     <div class="flex-1 flex flex-col w-full">
 
       <header class="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-30">
         <div class="flex md:hidden">
+=======
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col w-full">
+
+      <!-- Top Navbar -->
+      <header class="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-30">
+        <!-- Sidebar Toggle (Mobile) -->
+        <div class="flex md:hidden">
+          <!-- Mobile Button -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
           <button @click="sidebarOpen = !sidebarOpen" class="text-gray-600 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -94,10 +132,20 @@
           </button>
         </div>
       
+<<<<<<< HEAD
         <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Update Information</h1>
 
         <div class="flex items-center space-x-4">  
           <div class="relative" x-data="{ notifyOpen: false }">
+=======
+        <!-- Title (Centered) -->
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Update Information</h1>
+
+        <div class="flex items-center space-x-4">  
+          <!-- Notifications -->
+          <div class="relative" x-data="{ notifyOpen: false }">
+            <!-- Bell Button -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
             <button @click="notifyOpen = !notifyOpen" class="relative focus:outline-none">
               <span class="material-icons text-gray-600 text-2xl">notifications</span>
               <span class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 animate-bounce">
@@ -105,6 +153,10 @@
               </span>
             </button>
     
+<<<<<<< HEAD
+=======
+            <!-- Notification Dropdown -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
             <div
               x-show="notifyOpen"
               @click.away="notifyOpen = false"
@@ -116,10 +168,18 @@
               x-transition:leave-end="opacity-0 scale-95"
               class="absolute right-0 mt-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden"
             >
+<<<<<<< HEAD
+=======
+              <!-- Header -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
               <div class="bg-blue-400  text-white p-4 text-sm font-semibold">
                 Notifications
               </div>
     
+<<<<<<< HEAD
+=======
+              <!-- Notification Items -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
               <ul class="divide-y divide-gray-100 text-sm text-gray-700 max-h-72 overflow-y-auto">
                 <li class="flex items-start space-x-2 p-4 hover:bg-gray-50 transition">
                   <span class="material-icons text-blue-500 text-base">work</span>
@@ -144,12 +204,20 @@
                 </li>
               </ul>
     
+<<<<<<< HEAD
+=======
+        <!-- Footer -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div class="text-center text-xs text-gray-500 bg-gray-50 py-2">
           You have 3 unread notifications
         </div>
       </div>
     </div>
       
+<<<<<<< HEAD
+=======
+        <!-- Profile Dropdown -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div class="relative" x-data="{ open: false }">
           <div class="flex items-center space-x-2 cursor-pointer" @click="open = !open">
             <span class="text-sm text-gray-600 hidden sm:block">Andres Malvar</span>
@@ -161,10 +229,18 @@
         </div>
       </header>
 
+<<<<<<< HEAD
+=======
+    <!-- Page Content -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
     <main class="p-6 bg-gradient-to-br from-blue-50 to-white min-h-screen">
       <form action="updateinfo.php" method="POST" enctype="multipart/form-data"
         class="bg-white bg-opacity-90 backdrop-blur-md p-8 rounded-2xl shadow-2xl max-w-4xl mx-auto space-y-10 border border-blue-100">
   
+<<<<<<< HEAD
+=======
+        <!-- Profile Picture Upload -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div class="flex flex-col items-center">
           <div class="relative">
             <img src="assets/alumni.png" alt="Profile Picture"
@@ -181,6 +257,10 @@
           <p class="text-sm text-gray-500 mt-2">Click the icon to change your photo</p>
         </div>
   
+<<<<<<< HEAD
+=======
+        <!-- Personal Details -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div>
           <h2 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text mb-6">
             👤 Personal Information
@@ -209,6 +289,10 @@
           </div>
         </div>
   
+<<<<<<< HEAD
+=======
+        <!-- Employment Details -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div>
           <h2 class="text-xl font-bold bg-gradient-to-r from-green-500 to-teal-600 text-transparent bg-clip-text mb-6">
             💼 Employment Information
@@ -237,6 +321,10 @@
           </div>
         </div>
   
+<<<<<<< HEAD
+=======
+        <!-- Submit -->
+>>>>>>> cb885096c52abad98425739932891e454cf4c84a
         <div class="text-right">
           <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">
             Update Info

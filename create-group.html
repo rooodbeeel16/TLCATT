@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ sidebarOpen: false }" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizations | TLCATT</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/TLCATT-LOGO.png" />
+
+    <!-- Tailwind & Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+
+      /* Hide scrollbar */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen flex flex-col md:flex-row">
+    <!-- Mobile Sidebar Overlay -->
+    <div x-show="sidebarOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden"
+         @click="sidebarOpen = false"></div>
+
+    <!-- Sidebar -->
+    <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+           class="fixed top-0 left-0 z-50 w-64 bg-white shadow-md p-4 transform transition-transform duration-300 ease-in-out h-screen overflow-y-auto no-scrollbar
+                  md:top-0 md:translate-x-0 md:transform-none md:sticky md:h-screen flex flex-col">
+      <!-- Sidebar Header -->
+      <div class="flex flex-col items-center justify-center mb-6">
+        <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="w-auto h-auto" />
+      </div>
+
+      <!-- Navigation -->
+      <nav class="space-y-4">
+        <a href="admindashboard.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+          <span class="material-icons">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="alumnidata.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+          <span class="material-icons">school</span>
+          <span>Alumni Data</span>
+        </a>
+        <a href="admin-organization.html" class="flex items-center space-x-2 text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+          <span class="material-icons">group</span>
+          <span>Organizations</span>
+        </a>
+        <a href="export.html" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transform transition duration-200 hover:scale-105">
+          <span class="material-icons">download</span>
+          <span>Exports</span>
+        </a>
+        <a href="index.html" class="flex items-center space-x-2 text-gray-700 hover:text-red-600 font-medium transform transition duration-200 hover:scale-105">
+          <span class="material-icons">logout</span>
+          <span>Log Out</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col w-full">
+      <!-- Top Navbar -->
+      <header class="bg-white shadow-md p-4 flex justify-between items-center sticky top-0 z-30">
+        <!-- Sidebar Toggle (Mobile) -->
+        <div class="flex md:hidden">
+          <button @click="sidebarOpen = !sidebarOpen" class="text-gray-600 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Page Title -->
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Organizations</h1>
+
+        <!-- Profile Section -->
+        <div class="flex items-center space-x-4">
+          <!-- Notifications -->
+          <div class="relative" x-data="{ notifyOpen: false }">
+            <button @click="notifyOpen = !notifyOpen" class="relative focus:outline-none">
+              <span class="material-icons text-gray-600 text-2xl">notifications</span>
+              <span class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 animate-bounce">12</span>
+            </button>
+            <div x-show="notifyOpen" @click.away="notifyOpen = false"
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-90"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-100"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="absolute right-0 mt-3 w-72 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
+              <div class="bg-blue-400 text-white p-4 text-sm font-semibold">Notifications</div>
+              <ul class="divide-y divide-gray-100 text-sm text-gray-700 max-h-72 overflow-y-auto">
+                <li class="flex items-start space-x-2 p-4 hover:bg-gray-50 transition">
+                  <span class="material-icons text-indigo-500 text-base">login</span>
+                  <div>
+                    <p class="font-medium">User login detected</p>
+                    <p class="text-xs text-gray-500">John Doe accessed the system at 9:42 AM.</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="text-center text-xs text-gray-500 bg-gray-50 py-2">
+                You have 16 unread notifications
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Dropdown -->
+          <div class="relative" x-data="{ open: false }">
+            <div class="flex items-center space-x-2 cursor-pointer" @click="open = !open">
+              <span class="text-sm text-gray-600 hidden sm:block">Admin</span>
+              <img src="assets/profile.jpeg" alt="Profile" class="w-10 h-10 rounded-full border" />
+            </div>
+            <div x-show="open" @click.away="open = false"
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-100"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="absolute right-0 mt-2 w-36 bg-white border rounded shadow-lg z-50">
+              <a href="index.html"
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white transition">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="flex-grow bg-gradient-to-tr from-blue-200 via-white to-blue-400 p-6 flex items-center justify-center">
+
+
+        <div class="bg-white shadow-lg rounded-2xl p-8 max-w-md w-full">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Create Alumni Group</h2>
+          <form action="#" method="POST" enctype="multipart/form-data" class="space-y-5">
+            <!-- Group Name -->
+            <div>
+              <label for="groupName" class="block text-sm font-medium text-gray-700">Group Name</label>
+              <input type="text" id="groupName" name="group_name" required
+                     class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300 border-gray-300" />
+            </div>
+
+            <!-- Group Details -->
+            <div>
+              <label for="groupDetails" class="block text-sm font-medium text-gray-700">Group Details</label>
+              <textarea id="groupDetails" name="group_details" rows="4" required
+                        class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300 border-gray-300"></textarea>
+            </div>
+
+            <div>
+                <label for="groupDetails" class="block text-sm font-medium text-gray-700">Group Short Description</label>
+                <textarea id="groupDetails" name="group_details" rows="4" required
+                          class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300 border-gray-300"></textarea>
+              </div>
+
+            <!-- Group Photo -->
+            <div>
+              <label for="groupPhoto" class="block text-sm font-medium text-gray-700">Group Photo</label>
+              <input type="file" id="groupPhoto" name="group_photo" accept="image/*"
+                     class="mt-1 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200" />
+            </div>
+
+            <!-- Group Link -->
+            <div>
+              <label for="groupLink" class="block text-sm font-medium text-gray-700">Group Link</label>
+              <input type="url" id="groupLink" name="group_link" required
+                     class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300 border-gray-300" />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+              <button type="submit"
+                      class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
+                Create Group
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

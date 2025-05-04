@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Organizations | TLCATT</title>
+    <title>Group Details | TLCATT</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/TLCATT-LOGO.png" />
@@ -30,15 +30,15 @@
   
     <!-- Sidebar -->
     <aside 
-    :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" 
-    class="fixed top-0 left-0 z-50 w-64 bg-white shadow-md p-4 transform transition-transform duration-300 ease-in-out h-screen 
-            md:top-0 md:translate-x-0 md:transform-none md:sticky"
-  >
+  :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" 
+  class="fixed top-0 left-0 z-50 w-64 bg-white shadow-md p-4 transform transition-transform duration-300 ease-in-out h-screen 
+         md:top-0 md:translate-x-0 md:transform-none md:sticky"
+>
+
+  
         <!-- Sidebar Header -->
         <div class="flex flex-col items-center justify-center mb-6">
-          <a href="alumnidashboard.html">
-            <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="w-auto h-auto">
-          </a>
+          <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="w-auto h-auto">
         </div>
 
         <!-- Navigation -->
@@ -111,7 +111,7 @@
         </div>
       
         <!-- Title (Centered) -->
-        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Join Organizations</h1>
+        <h1 class="text-lg md:text-xl font-semibold text-gray-800 flex-1 text-center">Group Details</h1>
 
         <div class="flex items-center space-x-4">  
           <!-- Notifications -->
@@ -214,96 +214,54 @@
         </div>
       </header>
 
- <!-- Main Content -->
-<main class="flex-1 p-6 bg-gradient-to-tr from-blue-200 via-white to-blue-400">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+       <!-- Main Content -->
+  <main class="max-w-5xl mx-auto mt-8 px-6">
+    <div class="bg-white p-6 rounded-xl shadow-lg ">
+      <img src="https://images.squarespace-cdn.com/content/v1/5316a542e4b0ab76f8fe62c2/cb69fc6c-4a5e-4b79-a9eb-0d2eeb1d13dc/volunteers.jpg" alt="Tech Banner" class="rounded-lg mb-6 w-full h-64 object-cover">
 
-    <!-- TLC Tech Enthusiasts -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://images.squarespace-cdn.com/content/v1/5316a542e4b0ab76f8fe62c2/cb69fc6c-4a5e-4b79-a9eb-0d2eeb1d13dc/volunteers.jpg" alt="Tech Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">TLC Tech Enthusiasts</h2>
-        <p class="text-sm text-gray-600 mb-4">For alumni passionate about IT, software dev, and tech trends.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <a href="see-group.html" class="mt-2 flex flex-col gap-2">
-          <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">
-            See Group Details
-          </button>
-        </a>
-      </div>
-    </div>
+      <h2 class="text-xl font-semibold text-gray-800 mb-2">About the Group</h2>
+      <p class="text-gray-600 mb-6">
+        The TLC Tech Enthusiasts group is a vibrant community of TLC alumni with a shared passion for innovation, coding, software development, and staying updated on the latest tech trends. We organize meetups, workshops, and webinars to connect and grow together.
+      </p>
 
-    <!-- TLC Business Circle -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://www.shutterstock.com/image-photo/silhouette-business-people-posing-by-600nw-178721822.jpg" alt="Business Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">TLC Business Circle</h2>
-        <p class="text-sm text-gray-600 mb-4">Network with alumni in marketing, entrepreneurship, and business strategy.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
-    </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-1">Upcoming Activities</h3>
+      <ul class="list-disc list-inside text-gray-600 mb-6">
+        <li>Monthly coding challenges</li>
+        <li>Tech Talk Tuesdays</li>
+        <li>Career mentoring and resume reviews</li>
+      </ul>
 
-    <!-- Alumni Volunteers -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://altlig.com/wp-content/uploads/2018/10/volunteer.png" alt="Volunteers Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">Alumni Volunteers</h2>
-        <p class="text-sm text-gray-600 mb-4">Get involved in charity work, community service, and mentoring students.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
-    </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-1">Group Admin</h3>
+      <p class="text-gray-600 mb-6">Engr. Alex Ramirez, BSIT 2015</p>
 
-    <!-- TLC Creative Collective -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://images.squarespace-cdn.com/content/v1/64d19b3030ee2839c2837203/caed68ef-70ca-4697-a170-ef56fd7b3617/TCC-Logo-02.png" alt="Creative Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">TLC Creative Collective</h2>
-        <p class="text-sm text-gray-600 mb-4">Join alumni in design, media, and creative fields to collaborate and grow.</p>
-      </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button class="bg-blue-600 text-white text-sm font-semibold px-6 py-2 rounded-full hover:scale-105 transition-all duration-300">Join Group</button>
+        <a href="organizations.html" class="flex flex-col sm:flex-row gap-3">
+            <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">
+              Back to Groups
+            </button>
+          </a>      </div>
     </div>
-
-    <!-- Sports & Wellness Club -->
-    <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between min-h-[360px] transform transition duration-300 hover:scale-[1.03] hover:shadow-xl">
-      <div>
-        <img src="https://media.licdn.com/dms/image/v2/D5612AQFYIuqtF0lKIQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1695967301062?e=2147483647&v=beta&t=lvUg9VqFwLS4GmpRaRIjP9JX6dJzGLFKxp19GpxsqPc" alt="Sports Group" class="rounded-lg mb-4 w-full h-32 object-cover">
-        <h2 class="text-xl font-semibold text-gray-800 mb-1">Sports & Wellness Club</h2>
-        <p class="text-sm text-gray-600 mb-4">Stay active, join alumni tournaments, and focus on well-being together.</p>
+  </main>
+  <footer class="bg-white mt-8 p-6 shadow-inner">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-6 text-sm text-gray-700">
+    
+      <!-- Logo & Name -->
+      <div class="flex items-center space-x-3">
+        <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="h-10 w-auto">
+        <div class="text-center md:text-left">
+          <p class="font-semibold text-base text-gray-800">The Lewis College</p>
+          <p class="text-sm text-gray-600">Alumni Tracer Tool</p>
+        </div>
       </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <button class="bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow hover:scale-105 transition-all duration-300">Join Group</button>
-        <button class="border border-blue-600 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full hover:bg-blue-100 hover:border-blue-700 hover:scale-105 transition-all duration-300 ease-in-out">See Group Details</button>
-      </div>
+    
+      <!-- Footer Text -->
+      <p class="text-center md:text-right">&copy; 2025 TLC Alumni Tracer Tool. All rights reserved.</p>
     </div>
-
-  </div>
-</main>
-<footer class="bg-white mt-8 p-6 shadow-inner">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-6 text-sm text-gray-700">
-  
-    <!-- Logo & Name -->
-    <div class="flex items-center space-x-3">
-      <img src="assets/TLCATT-LOGO.png" alt="TLC Logo" class="h-10 w-auto">
-      <div class="text-center md:text-left">
-        <p class="font-semibold text-base text-gray-800">The Lewis College</p>
-        <p class="text-sm text-gray-600">Alumni Tracer Tool</p>
-      </div>
-    </div>
-  
-    <!-- Footer Text -->
-    <p class="text-center md:text-right">&copy; 2025 TLC Alumni Tracer Tool. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
+    
+
+
+
